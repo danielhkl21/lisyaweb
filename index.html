@@ -89,7 +89,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .about-strip::before{content:'"Teringin? Buat sendiri je"';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--font-d);font-size:clamp(2rem,6vw,5rem);font-style:italic;color:rgba(122,79,79,0.07);white-space:nowrap;pointer-events:none;letter-spacing:0.02em;}
 .about-inner{max-width:1300px;margin:0 auto;display:flex;align-items:center;gap:4rem;}
 .about-avatar{flex-shrink:0;width:160px;height:160px;border-radius:50%;background:linear-gradient(135deg,var(--dusty),var(--rose));border:4px solid #fff;display:flex;align-items:center;justify-content:center;font-size:4rem;box-shadow:0 12px 40px rgba(122,79,79,0.2);overflow:hidden;}
-.about-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;}.about-text h2{font-family:var(--font-d);font-size:clamp(1.6rem,3vw,2.4rem);color:var(--deep);margin-bottom:0.75rem;}
+.about-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+.about-text h2{font-family:var(--font-d);font-size:clamp(1.6rem,3vw,2.4rem);color:var(--deep);margin-bottom:0.75rem;}
 .about-text p{font-size:0.9rem;color:var(--mauve);line-height:1.8;max-width:540px;}
 .about-stats{display:flex;gap:2.5rem;margin-top:1.5rem;}
 .stat-num{font-family:var(--font-d);font-size:1.8rem;font-weight:500;color:var(--deep);}
@@ -116,6 +117,16 @@ footer{background:var(--deep);color:rgba(253,248,245,0.8);padding:3rem 3.5rem;te
 </style>
 </head>
 <body>
+
+<!-- =================================================================
+  HOW TO ADD A NEW RECIPE:
+  1. Open this file in Notepad or VS Code
+  2. Scroll down to find the RECIPES list below
+  3. Copy one recipe block (from the { to the }, )
+  4. Paste it after the last recipe, before the closing ];
+  5. Edit the name, ingredients, tiktokUrl, etc.
+  6. Save the file and refresh your browser — done!
+================================================================= -->
 
 <script>
 // ================================================================
@@ -152,16 +163,16 @@ const RECIPES = [
     emoji:       "🍗",
     photo:       "",
     badge:       "Buka Puasa",
-    time:  "45 min",
+    time:        "45 min",
     servings:    "6 pcs",
     desc:        "Menu berbuka mudah dan cepat siap dalam 45 minit sahaja menggunakan @Bestari Food 😋",
     tiktokUrl:   "https://vt.tiktok.com/ZSQFtae2a/",
     ingredients: [
-      "<strong>Bahan Ayam</strong>",
+      "<strong>[Bahan Ayam]</strong>",
       "2 cawan tepung serbaguna",
       "1 cawan air suam",
       "Dada ayam dipotong kecil",
-      "<strong>Bahan Butter Sapuan</strong>",
+      "<strong>[Bahan Butter Sapuan]</strong>",
       "2 sb butter",
       "1 ulas bawang putih",
       "Daun parsley (chopped)"
@@ -226,16 +237,16 @@ const RECIPES = [
     desc:        "Hidangan daging lembu masak masam manis yang lembut, pekat, dan membuka selera.",
     tiktokUrl:   "https://vt.tiktok.com/ZSQFqdtQG/",
     ingredients: [
-      "<strong>List Bahan</strong>",
+      "<strong>[List Bahan]</strong>",
       "470g daging lembu",
       "1/2 sk soda bikarbonat",
       "1/4 cawan air",
-      "<strong>Bahan Daging Goreng</strong>",
+      "<strong>[Bahan Daging Goreng]</strong>",
       "Daging lembu (dah dilembutkan)",
       "1 sb sos tiram",
       "1/2 sk lada putih",
       "Tepung jagung",
-      "<strong>Bahan Sos</strong>",
+      "<strong>[Bahan Sos]</strong>",
       "3 ulas bawang putih",
       "1/2 biji bawang holland",
       "4 sb sos tomato",
@@ -263,11 +274,11 @@ const RECIPES = [
     desc:        "Kebab paha ayam juicy digabungkan dengan limpahan sos garlic butter coating yang mantap.",
     tiktokUrl:   "https://vt.tiktok.com/ZSQFtEoEj/",
     ingredients: [
-      "<strong>Bahan Ayam</strong>",
+      "<strong>[Bahan Ayam]</strong>",
       "500g isi paha ayam tanpa tulang (chicken thigh without bones)",
       "2 sb rempah paparoger",
       "Sedikit salt (garam)",
-      "<strong>Sos Garlic Butter untuk Coating</strong>",
+      "<strong>[Sos Garlic Butter untuk Coating]</strong>",
       "3 ulas bawang putih",
       "2 helai daun ketumbar (chopped coriander leaves)",
       "3 tangkai cili hijau (dihiris)",
@@ -281,16 +292,19 @@ const RECIPES = [
 ];
 </script>
 
+<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">Lisya Fashihah</a>
   <ul class="nav-links">
     <li><a href="#recipes">Recipes</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="https://www.tiktok.com/@lisyafashihah" target="_blank">TikTok</a></li>
+    <li><a href="products.html">Shop</a></li>
   </ul>
   <a href="https://www.tiktok.com/@lisyafashihah" target="_blank" class="nav-tiktok">Follow on TikTok</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-badge"><span class="dot"></span>TikTok Recipes by Lisya Fashihah<span class="dot"></span></div>
   <h1 class="hero-title">Simple recipes,<br>made with <em>love.</em></h1>
@@ -299,6 +313,7 @@ const RECIPES = [
   <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
 </section>
 
+<!-- RECIPES -->
 <section class="section" id="recipes">
   <div class="section-header reveal">
     <span class="section-eyebrow">My Collection</span>
@@ -323,6 +338,7 @@ const RECIPES = [
   </div>
 </section>
 
+<!-- ABOUT -->
 <section class="about-strip" id="about">
   <div class="about-inner">
     <div class="about-avatar"><img src="photos/daniel.jpeg" alt="Lisya Fashihah" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
@@ -338,6 +354,7 @@ const RECIPES = [
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-logo">Lisya Fashihah</div>
   <div class="footer-sub">Simple recipes · Made with love · TikTok @lisyafashihah</div>
@@ -346,10 +363,12 @@ const RECIPES = [
     <li><a href="#about">About</a></li>
     <li><a href="https://www.tiktok.com/@lisyafashihah" target="_blank">TikTok</a></li>
     <li><a href="https://linktr.ee/lisyafashihah" target="_blank">Linktree</a></li>
+    <li><a href="products.html">Shop</a></li>
   </ul>
   <div class="footer-copy">2026 Lisya Fashihah · All Rights Reserved</div>
 </footer>
 
+<!-- MODAL -->
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal">
     <div class="modal-top" id="mTop"></div>
