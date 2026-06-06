@@ -18,7 +18,7 @@ body{font-family:var(--font-b);background:var(--cream);color:var(--text);font-we
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 60% at 10% 0%,rgba(237,207,202,0.45) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 90% 10%,rgba(249,238,232,0.6) 0%,transparent 55%),radial-gradient(ellipse 50% 40% at 80% 90%,rgba(212,165,160,0.3) 0%,transparent 60%);pointer-events:none;z-index:0;}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.1rem 3.5rem;background:rgba(253,248,245,0.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
 .nav-logo{font-family:var(--font-d);font-size:1.45rem;font-weight:500;font-style:italic;color:var(--deep);text-decoration:none;}
-.nav-links{display:flex;gap:2.2rem;list-style:none;}
+.nav-links{display:flex;gap:1.4rem;list-style:none;}
 .nav-links a{font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
 .nav-links a:hover{color:var(--deep);}
 .nav-tiktok{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--deep);background:var(--rose);border:1px solid var(--dusty);padding:0.5rem 1.2rem;text-decoration:none;border-radius:50px;transition:all 0.2s;}
@@ -298,7 +298,6 @@ const RECIPES = [
   <ul class="nav-links">
     <li><a href="#recipes">Recipes</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="https://www.tiktok.com/@lisyafashihah" target="_blank">TikTok</a></li>
     <li><a href="products.html">Shop</a></li>
   </ul>
   <a href="https://www.tiktok.com/@lisyafashihah" target="_blank" class="nav-tiktok">Follow on TikTok</a>
