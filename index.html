@@ -116,16 +116,6 @@ footer{background:var(--deep);color:rgba(253,248,245,0.8);padding:3rem 3.5rem;te
 </head>
 <body>
 
-<!-- =================================================================
-  HOW TO ADD A NEW RECIPE:
-  1. Open this file in Notepad or VS Code
-  2. Scroll down to find the RECIPES list below
-  3. Copy one recipe block (from the { to the }, )
-  4. Paste it after the last recipe, before the closing ];
-  5. Edit the name, ingredients, tiktokUrl, etc.
-  6. Save the file and refresh your browser — done!
-================================================================= -->
-
 <script>
 // ================================================================
 //   YOUR RECIPES — edit here, no need to touch anything else!
@@ -137,127 +127,151 @@ const RECIPES = [
     category:    "cookies",
     emoji:       "🍪",
     photo:       "photos/dubai-cookie.png",
-    badge:       "TikTok",
+    badge:       "Viral",
     time:        "30 min",
     servings:    "12 pcs",
-    desc:        "Viral chewy cookies filled with pistachio cream — as seen on TikTok!",
+    desc:        "Resepi viral Dubai Chewy Cookies dengan gandingan kunafa rangup dan marshmallow mantap!",
     tiktokUrl:   "https://www.tiktok.com/@lisyafashihah",
     ingredients: [
-      "250g butter (suhu bilik)",
-      "200g gula kastor",
-      "2 biji telur",
-      "1 tsp vanilla extract",
-      "350g tepung gandum",
-      "1 tsp baking soda",
-      "1/2 tsp garam",
-      "200g chocolate chips",
-      "Pistachio cream (untuk isian)"
+      "[Bahan Kunafa]",
+      "1/4 ketul butter",
+      "200g kunafa dough",
+      "400g pistachio cream",
+      "[Bahan Kulit Marshmallow]",
+      "1/2 ketul butter",
+      "350g marshmallow",
+      "2 sb milk powder",
+      "4 sb serbuk koko"
     ]
   },
 
   {
-    name:        "Chicken Sliders",
+    name:        "Chicken Sliders dengan Mashed Potatoes",
     category:    "chicken",
     emoji:       "🍗",
     photo:       "",
-    badge:       "TikTok",
-    time:        "45 min",
+    badge:       "Buka Puasa",
+    time:  "45 min",
     servings:    "6 pcs",
-    desc:        "Juicy mini chicken burgers perfect for family tea-time or a quick meal.",
+    desc:        "Menu berbuka mudah dan cepat siap dalam 45 minit sahaja menggunakan @Bestari Food 😋",
     tiktokUrl:   "https://www.tiktok.com/@lisyafashihah",
     ingredients: [
-      "500g ayam cincang",
-      "1 biji bawang besar (dicincang)",
-      "3 ulas bawang putih",
-      "1 tbsp sos tiram",
-      "1 tbsp sos soya",
-      "Salt & pepper secukup rasa",
-      "6 biji slider bun",
-      "Daun salad & tomato",
-      "Mayo & sos cili"
+      "[Bahan Ayam]",
+      "2 cawan tepung serbaguna",
+      "1 cawan air suam",
+      "Dada ayam dipotong kecil",
+      "[Bahan Butter Sapuan]",
+      "2 sb butter",
+      "1 ulas bawang putih",
+      "Daun parsley (chopped)"
     ]
   },
 
   {
-    name:        "Biskut Raya Special",
-    category:    "cookies",
-    emoji:       "🎄",
+    name:        "Shrimp Scampi 🦐",
+    category:    "snacks",
+    emoji:       "🦐",
     photo:       "",
-    badge:       "Raya Special",
-    time:        "1 jam",
-    servings:    "Batch",
-    desc:        "Raya cookies collection — crispy, buttery, and beautiful for celebrating.",
-    tiktokUrl:   "https://www.tiktok.com/@lisyafashihah",
-    ingredients: [
-      "250g mentega",
-      "100g gula aising",
-      "1 biji kuning telur",
-      "1 tsp vanilla",
-      "300g tepung gandum",
-      "50g tepung jagung",
-      "Pewarna makanan (ikut suka)",
-      "Royal icing untuk hiasan"
-    ]
-  },
-
-  {
-    name:        "Ramadan Special Drinks",
-    category:    "drinks",
-    emoji:       "🍵",
-    photo:       "",
-    badge:       "Ramadan",
-    time:        "10 min",
-    servings:    "2 gelas",
-    desc:        "Refreshing drinks for buka puasa — easy, colourful and so satisfying.",
-    tiktokUrl:   "https://www.tiktok.com/@lisyafashihah",
-    ingredients: [
-      "500ml air sejuk",
-      "3 tbsp sirap ros",
-      "2 tbsp biji selasih (rendam)",
-      "Aiskrim vanilla 2 skup",
-      "Buah-buahan segar",
-      "Ais kiub secukupnya"
-    ]
-  },
-
-  {
-    name:        "Nasi Putih Sempurna",
-    category:    "rice",
-    emoji:       "🍚",
-    photo:       "",
-    badge:       "TikTok",
+    badge:       "Seafood",
     time:        "20 min",
-    servings:    "4 orang",
-    desc:        "Tips & tricks for perfectly fluffy white rice every single time.",
+    servings:    "4 pax",
+    desc:        "Resepi Shrimp Scampi yang sangat lazat dan segar, amat sesuai dihidangkan untuk menu berbuka!",
     tiktokUrl:   "https://www.tiktok.com/@lisyafashihah",
     ingredients: [
-      "2 cawan beras basmathi",
-      "2.5 cawan air",
-      "1 tsp garam",
-      "1 tbsp minyak masak",
-      "1 helai daun pandan (optional)"
+      "Olive oil",
+      "5 ulas bawang putih",
+      "1 sb butter",
+      "25 ekor udang",
+      "1/4 biji perahan jus lemon",
+      "1/2 sb butter",
+      "1/2 sk blackpepper",
+      "1/2 sk paprika",
+      "1 sb daun parsley (better guna yang fresh)"
     ]
   },
 
   {
-    name:        "Candied Crepe",
+    name:        "Candy Grape 🍬",
     category:    "dessert",
     emoji:       "🍬",
     photo:       "",
-    badge:       "TikTok",
-    time:        "25 min",
-    servings:    "8 pcs",
-    desc:        "Crispy candied crepes filled with sweet cream — a gorgeous viral treat.",
+    badge:       "Viral",
+    time:        "15 min",
+    servings:    "1 Dulang",
+    desc:        "Candy Grape yang tengah viral sekarang! Tak perlu beli mahal-mahal, jom buat sendiri je 😍",
     tiktokUrl:   "https://www.tiktok.com/@lisyafashihah",
     ingredients: [
-      "200g tepung gandum",
-      "2 biji telur",
-      "400ml susu segar",
-      "2 tbsp butter (cair)",
-      "3 tbsp gula",
-      "1 tsp vanilla",
-      "Whipping cream untuk isian",
-      "Gula kastor untuk caramel"
+      "2 cawan gula",
+      "1/2 cawan air",
+      "1/2 cawan light corn syrup",
+      "Perisa",
+      "Pewarna",
+      "Buah anggur",
+      "Glitter (optional)",
+      "Gula2",
+      "Jelly",
+      "Marshmallow"
+    ]
+  },
+
+  {
+    name:        "Sweet Sour Beef 🥩",
+    category:    "snacks",
+    emoji:       "🥩",
+    photo:       "",
+    badge:       "Daging",
+    time:        "40 min",
+    servings:    "4 orang",
+    desc:        "Hidangan daging lembu masak masam manis yang lembut, pekat, dan membuka selera.",
+    tiktokUrl:   "https://www.tiktok.com/@lisyafashihah",
+    ingredients: [
+      "[List Bahan]",
+      "470g daging lembu",
+      "1/2 sk soda bikarbonat",
+      "1/4 cawan air",
+      "[Bahan Daging Goreng]",
+      "Daging lembu (dah dilembutkan)",
+      "1 sb sos tiram",
+      "1/2 sk lada putih",
+      "Tepung jagung",
+      "[Bahan Sos]",
+      "3 ulas bawang putih",
+      "1/2 biji bawang holland",
+      "4 sb sos tomato",
+      "4 sb sos cili",
+      "2 sb light soy sauce / kicap biasa",
+      "5 sb air",
+      "1 sk cuka makan",
+      "4 sb gula",
+      "1/2 sk garam",
+      "1/2 ketul kiub ayam",
+      "Sedikit capsicum kuning",
+      "Sedikit capsicum merah",
+      "Daging goreng"
+    ]
+  },
+
+  {
+    name:        "Chicken Skewers (Kebab Ayam) 🍢",
+    category:    "chicken",
+    emoji:       "🍢",
+    photo:       "",
+    badge:       "Air Fryer",
+    time:        "25 min",
+    servings:    "4-5 pcs",
+    desc:        "Kebab paha ayam juicy digabungkan dengan limpahan sos garlic butter coating yang mantap.",
+    tiktokUrl:   "https://www.tiktok.com/@lisyafashihah",
+    ingredients: [
+      "[Bahan Ayam]",
+      "500g isi paha ayam tanpa tulang (chicken thigh without bones)",
+      "2 sb rempah paparoger",
+      "Sedikit salt (garam)",
+      "[Sos Garlic Butter untuk Coating]",
+      "3 ulas bawang putih",
+      "2 helai daun ketumbar (chopped coriander leaves)",
+      "3 tangkai cili hijau (dihiris)",
+      "45g butter",
+      "Nota: Bakar guna air fryer pada suhu 200°C selama 12-15 minit"
     ]
   }
 
@@ -266,7 +280,6 @@ const RECIPES = [
 ];
 </script>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">Lisya Fashihah</a>
   <ul class="nav-links">
@@ -277,7 +290,6 @@ const RECIPES = [
   <a href="https://www.tiktok.com/@lisyafashihah" target="_blank" class="nav-tiktok">Follow on TikTok</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-badge"><span class="dot"></span>TikTok Recipes by Lisya Fashihah<span class="dot"></span></div>
   <h1 class="hero-title">Simple recipes,<br>made with <em>love.</em></h1>
@@ -286,7 +298,6 @@ const RECIPES = [
   <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
 </section>
 
-<!-- RECIPES -->
 <section class="section" id="recipes">
   <div class="section-header reveal">
     <span class="section-eyebrow">My Collection</span>
@@ -311,7 +322,6 @@ const RECIPES = [
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="about-strip" id="about">
   <div class="about-inner">
     <div class="about-avatar">👩‍🍳</div>
@@ -327,7 +337,6 @@ const RECIPES = [
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-logo">Lisya Fashihah</div>
   <div class="footer-sub">Simple recipes · Made with love · TikTok @lisyafashihah</div>
@@ -337,10 +346,9 @@ const RECIPES = [
     <li><a href="https://www.tiktok.com/@lisyafashihah" target="_blank">TikTok</a></li>
     <li><a href="https://linktr.ee/lisyafashihah" target="_blank">Linktree</a></li>
   </ul>
-  <div class="footer-copy">2025 Lisya Fashihah · All Rights Reserved</div>
+  <div class="footer-copy">2026 Lisya Fashihah · All Rights Reserved</div>
 </footer>
 
-<!-- MODAL -->
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal">
     <div class="modal-top" id="mTop"></div>
