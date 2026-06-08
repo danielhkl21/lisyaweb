@@ -15,9 +15,8 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--font-b);background:var(--cream);color:var(--text);font-weight:300;overflow-x:hidden;}
-body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 60% at 10% 0%,rgba(237,207,202,0.45) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 90% 10%,rgba(249,238,232,0.6) 0%,transparent 55%),radial-gradient(ellipse 50% 40% at 80% 90%,rgba(212,165,160,0.3) 0%,transparent 60%);pointer-events:none;z-index:0;}
 
-/* NAV */
+/* NAV — exact same as index.html */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.1rem 3.5rem;background:rgba(253,248,245,0.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
 .nav-logo{font-family:var(--font-d);font-size:1.45rem;font-weight:500;font-style:italic;color:var(--deep);text-decoration:none;}
 .nav-links{display:flex;gap:1.4rem;list-style:none;}
@@ -27,77 +26,94 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .nav-tiktok{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--deep);background:var(--rose);border:1px solid var(--dusty);padding:0.5rem 1.2rem;text-decoration:none;border-radius:50px;transition:all 0.2s;}
 .nav-tiktok:hover{background:var(--dusty);color:#fff;}
 
-/* HERO */
-.shop-hero{padding:10rem 3.5rem 5rem;text-align:center;position:relative;z-index:1;}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(237,207,202,0.5);border:1px solid var(--rose);border-radius:50px;padding:0.4rem 1.2rem;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--mauve);margin-bottom:2rem;}
-.hero-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--dusty);}
-.shop-title{font-family:var(--font-d);font-size:clamp(2.5rem,5vw,4.5rem);font-weight:400;color:var(--deep);line-height:1.1;margin-bottom:1rem;}
-.shop-title em{font-style:italic;color:var(--mauve);}
-.shop-desc{font-size:0.95rem;color:var(--muted);max-width:500px;margin:0 auto 1rem;line-height:1.8;}
-.shop-note{font-size:0.8rem;color:var(--dusty);margin-bottom:2rem;}
+/* HERO BANNER */
+.hero-banner{width:100%;height:100vh;background:linear-gradient(135deg,var(--rose) 0%,var(--blush) 50%,var(--warm) 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.hero-banner img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+.hero-banner-overlay{position:absolute;inset:0;background:rgba(61,43,43,0.35);}
+.hero-banner-content{position:relative;z-index:1;text-align:center;color:#fff;padding:2rem;}
+.hero-banner-content .eyebrow{font-size:0.75rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.75);margin-bottom:1rem;}
+.hero-banner-content h1{font-family:var(--font-d);font-size:clamp(2.5rem,6vw,5rem);font-weight:400;line-height:1.1;margin-bottom:1.2rem;}
+.hero-banner-content h1 em{font-style:italic;color:var(--rose);}
+.hero-banner-content p{font-size:1rem;color:rgba(255,255,255,0.8);margin-bottom:2.5rem;max-width:450px;margin-left:auto;margin-right:auto;line-height:1.7;}
+.hero-banner-btn{display:inline-flex;align-items:center;gap:0.5rem;background:#fff;color:var(--deep);font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;padding:1rem 2.5rem;text-decoration:none;border-radius:50px;transition:all 0.2s;font-family:var(--font-b);}
+.hero-banner-btn:hover{background:var(--rose);color:#fff;}
 
-/* HOW TO ORDER */
-.how-section{padding:3rem 3.5rem;max-width:1000px;margin:0 auto;position:relative;z-index:1;}
-.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem;}
-.how-card{background:rgba(253,248,245,0.85);border:1px solid var(--border);border-radius:16px;padding:1.8rem;text-align:center;}
-.how-num{font-family:var(--font-d);font-size:2.5rem;font-weight:400;color:var(--rose);line-height:1;margin-bottom:0.75rem;}
-.how-title{font-size:0.85rem;font-weight:500;color:var(--deep);margin-bottom:0.4rem;letter-spacing:0.05em;}
-.how-desc{font-size:0.78rem;color:var(--muted);line-height:1.6;}
+/* no-photo hero */
+.hero-banner-nophoto{background:linear-gradient(135deg,var(--rose) 0%,var(--blush) 60%,var(--warm) 100%);}
+.hero-banner-nophoto .hero-banner-content h1{color:var(--deep);}
+.hero-banner-nophoto .hero-banner-content .eyebrow{color:var(--mauve);}
+.hero-banner-nophoto .hero-banner-content p{color:var(--muted);}
+.hero-banner-nophoto .hero-banner-btn{background:var(--deep);color:var(--cream);}
+.hero-banner-nophoto .hero-banner-btn:hover{background:var(--mauve);}
 
-/* SECTION */
-.section{padding:4rem 3.5rem;max-width:1200px;margin:0 auto;position:relative;z-index:1;}
-.section-header{text-align:center;margin-bottom:3rem;}
-.section-eyebrow{display:inline-block;font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--mauve);margin-bottom:0.8rem;}
-.section-title{font-family:var(--font-d);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;color:var(--deep);}
-.divider{display:flex;align-items:center;gap:1rem;justify-content:center;margin-top:1rem;}
+/* SECTION HEADER */
+.sec{padding:5rem 3.5rem;max-width:1300px;margin:0 auto;}
+.sec-head{text-align:center;margin-bottom:3rem;}
+.sec-eye{display:inline-block;font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--mauve);margin-bottom:0.6rem;}
+.sec-title{font-family:var(--font-d);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:400;color:var(--deep);}
+.divider{display:flex;align-items:center;gap:1rem;justify-content:center;margin-top:0.8rem;}
 .divider-line{height:1px;width:60px;background:var(--rose);}
 
 /* PRODUCT GRID */
-.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem;}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2rem;}
 
-.product-card{background:rgba(253,248,245,0.9);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all 0.3s ease;backdrop-filter:blur(4px);}
-.product-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(122,79,79,0.12);border-color:var(--rose);}
+.product-card{background:var(--cream);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all 0.3s;}
+.product-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(122,79,79,0.1);border-color:var(--rose);}
 
 .product-img{width:100%;aspect-ratio:1/1;background:linear-gradient(135deg,var(--rose),var(--blush));display:flex;align-items:center;justify-content:center;font-size:5rem;position:relative;overflow:hidden;}
-.product-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
-.product-badge{position:absolute;top:0.8rem;left:0.8rem;background:var(--deep);color:var(--cream);border-radius:50px;padding:0.25rem 0.8rem;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;}
-.product-badge.sold-out{background:var(--muted);}
-.product-badge.popular{background:#C9973D;}
+.product-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform 0.4s ease;}
+.product-card:hover .product-img img{transform:scale(1.05);}
 
-.product-body{padding:1.5rem;}
-.product-name{font-family:var(--font-d);font-size:1.25rem;font-weight:500;color:var(--deep);margin-bottom:0.4rem;line-height:1.3;}
-.product-desc{font-size:0.82rem;color:var(--muted);line-height:1.7;margin-bottom:1rem;}
+.product-label{position:absolute;top:0.8rem;left:0.8rem;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.8rem;border-radius:50px;}
+.product-label.popular{background:#C9973D;color:#fff;}
+.product-label.new{background:var(--deep);color:var(--cream);}
+.product-label.sold-out{background:var(--muted);color:#fff;}
 
-.product-variants{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1.2rem;}
-.variant-row{display:flex;justify-content:space-between;align-items:center;font-size:0.82rem;padding:0.5rem 0.8rem;background:var(--warm);border-radius:8px;border:1px solid var(--border);}
-.variant-name{color:var(--text);}
-.variant-price{font-family:var(--font-d);font-size:1rem;color:var(--deep);font-weight:500;}
+.product-info{padding:1.2rem 1.3rem 1.5rem;}
+.product-name{font-family:var(--font-d);font-size:1.1rem;font-weight:500;color:var(--deep);margin-bottom:0.3rem;line-height:1.3;}
+.product-desc{font-size:0.78rem;color:var(--muted);line-height:1.6;margin-bottom:1rem;}
 
-.product-tags{display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:1.2rem;}
-.tag{font-size:0.62rem;letter-spacing:0.08em;color:var(--mauve);background:var(--blush);border-radius:50px;padding:0.2rem 0.7rem;border:1px solid var(--rose);}
+.price-rows{display:flex;flex-direction:column;gap:0.35rem;margin-bottom:1.2rem;}
+.price-row{display:flex;justify-content:space-between;align-items:center;padding:0.45rem 0.75rem;background:var(--warm);border-radius:8px;border:1px solid var(--border);}
+.price-size{font-size:0.78rem;color:var(--text);}
+.price-amt{font-family:var(--font-d);font-size:0.95rem;color:var(--deep);font-weight:500;}
 
-.order-btn{display:flex;align-items:center;justify-content:center;gap:0.5rem;width:100%;padding:0.85rem;background:var(--deep);color:var(--cream);border-radius:12px;text-decoration:none;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.2s;border:none;cursor:pointer;font-family:var(--font-b);}
-.order-btn:hover{background:var(--mauve);}
-.order-btn.whatsapp{background:#25D366;}
-.order-btn.whatsapp:hover{background:#1DA851;}
-.order-btn svg{width:16px;height:16px;fill:currentColor;}
+.wa-btn{display:flex;align-items:center;justify-content:center;gap:0.5rem;width:100%;padding:0.8rem;background:#25D366;color:#fff;border-radius:10px;text-decoration:none;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;transition:background 0.2s;font-family:var(--font-b);}
+.wa-btn:hover{background:#1DA851;}
+.wa-btn svg{width:15px;height:15px;fill:#fff;flex-shrink:0;}
 
-/* INFO BANNER */
-.info-banner{background:linear-gradient(135deg,var(--rose),var(--blush));border:1px solid var(--dusty);border-radius:16px;padding:1.5rem 2rem;margin-bottom:3rem;display:flex;align-items:center;gap:1rem;position:relative;z-index:1;max-width:1200px;margin-left:auto;margin-right:auto;}
-.info-banner-icon{font-size:1.5rem;flex-shrink:0;}
-.info-banner-text{font-size:0.85rem;color:var(--deep);line-height:1.6;}
-.info-banner-text strong{display:block;margin-bottom:0.2rem;}
+/* STORY SECTION */
+.story{width:100%;background:var(--deep);display:grid;grid-template-columns:1fr 1fr;}
+.story-img{min-height:480px;background:linear-gradient(135deg,var(--mauve),var(--deep));display:flex;align-items:center;justify-content:center;font-size:8rem;position:relative;overflow:hidden;}
+.story-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+.story-text{padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+.story-text::before{content:'"';position:absolute;top:-2rem;left:2rem;font-family:var(--font-d);font-size:20rem;color:rgba(255,255,255,0.03);line-height:1;pointer-events:none;}
+.story-text .sec-eye{color:var(--rose);text-align:left;}
+.story-text h2{font-family:var(--font-d);font-size:clamp(1.8rem,3vw,2.8rem);color:#fff;font-weight:400;margin:0.75rem 0 1.2rem;line-height:1.2;}
+.story-text h2 em{font-style:italic;color:var(--rose);}
+.story-text p{font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.9;max-width:420px;margin-bottom:2rem;}
+.story-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--rose);color:var(--deep);font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.85rem 2rem;text-decoration:none;border-radius:50px;width:fit-content;transition:all 0.2s;font-family:var(--font-b);}
+.story-btn:hover{background:#fff;}
+
+/* HOW TO ORDER */
+.how{padding:5rem 3.5rem;background:var(--warm);}
+.how-inner{max-width:1000px;margin:0 auto;}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;}
+.how-card{background:var(--cream);border:1px solid var(--border);border-radius:16px;padding:2rem 1.5rem;text-align:center;}
+.how-num{font-family:var(--font-d);font-size:2.8rem;color:var(--rose);line-height:1;margin-bottom:0.75rem;}
+.how-title{font-size:0.88rem;font-weight:500;color:var(--deep);margin-bottom:0.5rem;}
+.how-desc{font-size:0.78rem;color:var(--muted);line-height:1.7;}
 
 /* FAQ */
-.faq-section{padding:3rem 3.5rem 5rem;max-width:800px;margin:0 auto;position:relative;z-index:1;}
+.faq{padding:5rem 3.5rem;max-width:800px;margin:0 auto;}
 .faq-item{border-bottom:1px solid var(--border);padding:1.2rem 0;}
-.faq-q{font-size:0.9rem;font-weight:500;color:var(--deep);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;}
-.faq-q::after{content:'+';font-size:1.2rem;color:var(--dusty);flex-shrink:0;transition:transform 0.2s;}
+.faq-q{font-size:0.9rem;font-weight:500;color:var(--deep);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;user-select:none;}
+.faq-q::after{content:'+';font-size:1.3rem;color:var(--dusty);flex-shrink:0;transition:transform 0.25s;}
 .faq-item.open .faq-q::after{transform:rotate(45deg);}
-.faq-a{font-size:0.83rem;color:var(--muted);line-height:1.7;max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s ease;}
+.faq-a{font-size:0.83rem;color:var(--muted);line-height:1.8;max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s ease;}
 .faq-item.open .faq-a{max-height:200px;padding-top:0.75rem;}
 
-/* FOOTER */
+/* FOOTER — exact same as index.html */
 footer{background:var(--deep);color:rgba(253,248,245,0.8);padding:3rem 3.5rem;text-align:center;position:relative;z-index:1;}
 .footer-logo{font-family:var(--font-d);font-size:1.6rem;font-style:italic;color:#fff;margin-bottom:0.5rem;}
 .footer-sub{font-size:0.78rem;letter-spacing:0.1em;color:rgba(253,248,245,0.5);margin-bottom:1.5rem;}
@@ -106,19 +122,22 @@ footer{background:var(--deep);color:rgba(253,248,245,0.8);padding:3rem 3.5rem;te
 .footer-links a:hover{color:var(--rose);}
 .footer-copy{font-size:0.7rem;color:rgba(253,248,245,0.3);}
 
-.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 
+@media(max-width:900px){
+  .story{grid-template-columns:1fr;}
+  .story-img{min-height:300px;}
+  .story-text{padding:3rem 2rem;}
+  .how-grid{grid-template-columns:1fr;}
+}
 @media(max-width:768px){
   nav{padding:1rem 1.5rem;}.nav-links{display:none;}
-  .shop-hero{padding:8rem 1.5rem 3rem;}
-  .section{padding:3rem 1.5rem;}
-  .how-section{padding:2rem 1.5rem;}
-  .how-grid{grid-template-columns:1fr;}
-  .faq-section{padding:2rem 1.5rem 4rem;}
+  .sec{padding:3.5rem 1.5rem;}
+  .how{padding:3.5rem 1.5rem;}
+  .faq{padding:3rem 1.5rem;}
   footer{padding:2.5rem 1.5rem;}.footer-links{flex-wrap:wrap;gap:1rem;}
-  .info-banner{flex-direction:column;text-align:center;margin:0 1.5rem 2rem;}
+  .hero-banner{height:80vh;}
 }
 </style>
 </head>
@@ -126,85 +145,77 @@ footer{background:var(--deep);color:rgba(253,248,245,0.8);padding:3rem 3.5rem;te
 
 <!-- ============================================================
   EDIT YOUR PRODUCTS HERE!
+  - name, desc, emoji, photo, label, labelType, variants, message
+  - labelType: "popular" | "new" | "sold-out" | ""
+  - photo: "photos/your-image.jpg" or "" to show emoji
+  - WHATSAPP_NUMBER: your number e.g. "60112345678"
 
-  For each product, change:
-    name       = Product name
-    emoji      = emoji if no photo
-    photo      = "photos/your-image.jpg" or "" for emoji
-    badge      = "Popular" | "New" | "Sold Out" | ""
-    badgeType  = "popular" | "sold-out" | ""
-    desc       = Short description
-    tags       = list of labels e.g. ["Halal", "Homemade"]
-    variants   = sizes/flavours with prices
-    whatsapp   = your WhatsApp number e.g. "601112345678"
-    message    = pre-filled WhatsApp message
+  HERO:
+  - HERO_PHOTO: path to a nice food photo e.g. "photos/hero.jpg" or "" for gradient
 ============================================================ -->
-
 <script>
-const WHATSAPP_NUMBER = "601XXXXXXXX"; // TUKAR kepada nombor WhatsApp anda
+const WHATSAPP_NUMBER = "601XXXXXXXX"; // ← TUKAR nombor WhatsApp anda
+
+const HERO_PHOTO = ""; // ← letak gambar hero e.g. "photos/hero-kek.jpg" atau biarkan ""
 
 const PRODUCTS = [
   {
     name:      "Kek Batik Classic",
     emoji:     "🍫",
     photo:     "",
-    badge:     "Popular",
-    badgeType: "popular",
-    desc:      "Kek batik klasik dengan biskut marie, coklat cair, dan susu pekat. Lembut, manis, dan memang tak boleh berhenti makan!",
-    tags:      ["Halal", "Homemade", "No Oven"],
+    label:     "Popular",
+    labelType: "popular",
+    desc:      "Kek batik klasik dengan biskut marie, coklat cair dan susu pekat. Lembut, manis, memang tak boleh berhenti makan!",
     variants:  [
       { size: "Small (6\" x 4\")",  price: "RM 18" },
       { size: "Medium (8\" x 5\")", price: "RM 28" },
       { size: "Large (10\" x 6\")", price: "RM 38" }
     ],
-    message:   "Hi Lisya! Saya nak order Kek Batik Classic. Boleh tahu availability?"
+    message: "Hi Lisya! Saya nak order Kek Batik Classic. Boleh tahu availability?"
   },
   {
     name:      "Kek Batik Nutella",
     emoji:     "🍫",
     photo:     "",
-    badge:     "New",
-    badgeType: "",
-    desc:      "Versi premium kek batik dengan Nutella extra creamy. Setiap suapan ada rasa hazelnut yang kaya dan sedap gila!",
-    tags:      ["Halal", "Homemade", "Nutella"],
+    label:     "New",
+    labelType: "new",
+    desc:      "Versi premium dengan Nutella extra creamy. Setiap suapan ada rasa hazelnut yang kaya dan sedap gila!",
     variants:  [
       { size: "Small (6\" x 4\")",  price: "RM 22" },
       { size: "Medium (8\" x 5\")", price: "RM 32" },
       { size: "Large (10\" x 6\")", price: "RM 45" }
     ],
-    message:   "Hi Lisya! Saya nak order Kek Batik Nutella. Boleh tahu availability?"
+    message: "Hi Lisya! Saya nak order Kek Batik Nutella. Boleh tahu availability?"
   },
   {
     name:      "Kek Batik Oreo",
     emoji:     "🖤",
     photo:     "",
-    badge:     "",
-    badgeType: "",
-    desc:      "Kek batik dengan twist — biskut Oreo crushing di dalam coklat cair. Warna hitam putih yang cantik dan rasa yang luar biasa!",
-    tags:      ["Halal", "Homemade", "Oreo"],
+    label:     "",
+    labelType: "",
+    desc:      "Biskut Oreo crushing dalam coklat cair. Warna hitam putih yang cantik dan rasa yang luar biasa!",
     variants:  [
       { size: "Small (6\" x 4\")",  price: "RM 20" },
       { size: "Medium (8\" x 5\")", price: "RM 30" },
       { size: "Large (10\" x 6\")", price: "RM 42" }
     ],
-    message:   "Hi Lisya! Saya nak order Kek Batik Oreo. Boleh tahu availability?"
+    message: "Hi Lisya! Saya nak order Kek Batik Oreo. Boleh tahu availability?"
   },
   {
     name:      "Kek Batik Party Box",
     emoji:     "🎁",
     photo:     "",
-    badge:     "Popular",
-    badgeType: "popular",
-    desc:      "Sesuai untuk hadiah, kenduri, atau majlis! Box cantik berisi kek batik pilihan anda, siap dengan ribbon dan kad ucapan.",
-    tags:      ["Gift Ready", "Custom", "Halal"],
+    label:     "Popular",
+    labelType: "popular",
+    desc:      "Sesuai untuk hadiah, kenduri atau majlis! Box cantik siap dengan ribbon dan kad ucapan.",
     variants:  [
       { size: "Box of 9 pcs",  price: "RM 35" },
       { size: "Box of 16 pcs", price: "RM 58" },
       { size: "Box of 25 pcs", price: "RM 85" }
     ],
-    message:   "Hi Lisya! Saya berminat dengan Kek Batik Party Box. Boleh share details?"
+    message: "Hi Lisya! Saya berminat dengan Kek Batik Party Box. Boleh share details?"
   }
-  // TAMBAH PRODUK BARU DI ATAS SINI — jangan lupa letak koma selepas } produk sebelumnya!
+  // TAMBAH PRODUK BARU DI ATAS — jangan lupa koma selepas } produk sebelumnya!
 ];
 </script>
 
@@ -219,85 +230,92 @@ const PRODUCTS = [
   <a href="https://www.tiktok.com/@lisyafashihah" target="_blank" class="nav-tiktok">Follow on TikTok</a>
 </nav>
 
-<!-- HERO -->
-<div class="shop-hero">
-  <div class="hero-eyebrow"><span class="dot"></span>Homemade with Love<span class="dot"></span></div>
-  <h1 class="shop-title">Kek Batik <em>by Lisya</em></h1>
-  <p class="shop-desc">Kek batik homemade yang dibuat dengan penuh kasih sayang. Sesuai untuk hadiah, kenduri, atau makan sendiri je! 🍫</p>
-  <p class="shop-note">✦ Order melalui WhatsApp · Tempah awal 2-3 hari · Delivery available</p>
-</div>
-
-<!-- HOW TO ORDER -->
-<div class="how-section reveal">
-  <div class="section-header">
-    <span class="section-eyebrow">Cara Order</span>
-    <h2 class="section-title">3 Langkah Mudah</h2>
-    <div class="divider"><div class="divider-line"></div><span style="color:var(--dusty)">❀</span><div class="divider-line"></div></div>
-  </div>
-  <div class="how-grid">
-    <div class="how-card">
-      <div class="how-num">01</div>
-      <div class="how-title">Pilih Produk</div>
-      <div class="how-desc">Scroll ke bawah, pilih kek batik kegemaran anda dan saiz yang sesuai.</div>
-    </div>
-    <div class="how-card">
-      <div class="how-num">02</div>
-      <div class="how-title">Klik Order via WhatsApp</div>
-      <div class="how-desc">Tekan butang WhatsApp — mesej automatik akan dihantar kepada kami.</div>
-    </div>
-    <div class="how-card">
-      <div class="how-num">03</div>
-      <div class="how-title">Bayar & Tunggu</div>
-      <div class="how-desc">Buat bayaran deposit, dan kek anda akan siap dalam 2-3 hari bekerja!</div>
-    </div>
-  </div>
-</div>
-
-<!-- INFO BANNER -->
-<div class="info-banner reveal" style="margin-top:0;padding-left:3.5rem;padding-right:3.5rem;max-width:100%;">
-  <div class="info-banner-icon">📦</div>
-  <div class="info-banner-text">
-    <strong>Nota Penting untuk Order</strong>
-    Sila tempah sekurang-kurangnya 2-3 hari awal · Bayaran deposit 50% diperlukan · Self-pickup atau delivery (tambah caj) · Sebarang pertanyaan, WhatsApp terus!
+<!-- HERO BANNER -->
+<div class="hero-banner" id="heroBanner">
+  <div class="hero-banner-overlay" id="heroOverlay" style="display:none"></div>
+  <div class="hero-banner-content">
+    <p class="eyebrow">Homemade with Love · Selangor & KL</p>
+    <h1>Kek Batik <em>by Lisya</em></h1>
+    <p>Dibuat dengan penuh kasih sayang. Sesuai untuk hadiah, kenduri, atau makan sendiri je!</p>
+    <a href="#products" class="hero-banner-btn">Shop Now</a>
   </div>
 </div>
 
 <!-- PRODUCTS -->
-<section class="section" id="products">
-  <div class="section-header reveal">
-    <span class="section-eyebrow">✦ Our Products</span>
-    <h2 class="section-title">Pilih Kek Batik Anda</h2>
+<section class="sec" id="products">
+  <div class="sec-head reveal">
+    <span class="sec-eye">✦ Our Products</span>
+    <h2 class="sec-title">Pilih Kek Batik Anda</h2>
     <div class="divider"><div class="divider-line"></div><span style="color:var(--dusty)">❀</span><div class="divider-line"></div></div>
   </div>
   <div class="product-grid" id="productGrid"></div>
 </section>
 
+<!-- STORY -->
+<div class="story">
+  <div class="story-img" id="storyImg">🍫</div>
+  <div class="story-text">
+    <span class="sec-eye">Our Story</span>
+    <h2>Dibuat dengan <em>sepenuh hati.</em></h2>
+    <p>Setiap kek batik yang keluar dari dapur saya dibuat dengan bahan terbaik dan penuh kasih sayang. Dari resipi viral TikTok hingga ke meja makan anda — ini bukan sekadar kek, ini kenangan manis yang anda cipta bersama orang tersayang.</p>
+    <a href="https://www.tiktok.com/@lisyafashihah" target="_blank" class="story-btn">Watch on TikTok →</a>
+  </div>
+</div>
+
+<!-- HOW TO ORDER -->
+<div class="how">
+  <div class="how-inner">
+    <div class="sec-head reveal">
+      <span class="sec-eye">Cara Order</span>
+      <h2 class="sec-title">3 Langkah Mudah</h2>
+      <div class="divider"><div class="divider-line"></div><span style="color:var(--dusty)">❀</span><div class="divider-line"></div></div>
+    </div>
+    <div class="how-grid">
+      <div class="how-card reveal">
+        <div class="how-num">01</div>
+        <div class="how-title">Pilih Produk</div>
+        <div class="how-desc">Scroll ke atas, pilih kek batik kegemaran anda dan saiz yang sesuai.</div>
+      </div>
+      <div class="how-card reveal" style="transition-delay:0.1s">
+        <div class="how-num">02</div>
+        <div class="how-title">Klik WhatsApp</div>
+        <div class="how-desc">Tekan butang hijau — mesej automatik akan dihantar terus kepada kami.</div>
+      </div>
+      <div class="how-card reveal" style="transition-delay:0.2s">
+        <div class="how-num">03</div>
+        <div class="how-title">Bayar & Tunggu</div>
+        <div class="how-desc">Bayar deposit 50%, dan kek anda siap dalam 2–3 hari bekerja!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- FAQ -->
-<div class="faq-section">
-  <div class="section-header reveal">
-    <span class="section-eyebrow">Soalan Lazim</span>
-    <h2 class="section-title">FAQ</h2>
+<div class="faq">
+  <div class="sec-head reveal">
+    <span class="sec-eye">Soalan Lazim</span>
+    <h2 class="sec-title">FAQ</h2>
     <div class="divider"><div class="divider-line"></div><span style="color:var(--dusty)">❀</span><div class="divider-line"></div></div>
   </div>
   <div class="faq-item reveal">
     <div class="faq-q">Berapa lama kek boleh tahan?</div>
-    <div class="faq-a">Kek batik boleh tahan 3-5 hari dalam peti sejuk. Pastikan disimpan dalam bekas tertutup untuk kekalkan kesegaran.</div>
+    <div class="faq-a">Kek batik boleh tahan 3–5 hari dalam peti sejuk. Simpan dalam bekas tertutup untuk kekalkan kesegaran.</div>
   </div>
   <div class="faq-item reveal">
     <div class="faq-q">Adakah delivery tersedia?</div>
-    <div class="faq-a">Ya! Kami ada delivery dalam kawasan Selangor & KL. Caj delivery bergantung kepada lokasi anda. Boleh tanya melalui WhatsApp untuk confirm.</div>
+    <div class="faq-a">Ya! Kami ada delivery dalam kawasan Selangor & KL. Caj delivery bergantung kepada lokasi. Tanya melalui WhatsApp untuk confirm.</div>
   </div>
   <div class="faq-item reveal">
     <div class="faq-q">Boleh custom order / tulis nama?</div>
-    <div class="faq-a">Boleh! Kami boleh buat custom topping, tulis nama, atau tambah hiasan khas untuk majlis. Sila nyatakan semasa order.</div>
+    <div class="faq-a">Boleh! Kami boleh buat custom topping, tulis nama, atau tambah hiasan khas untuk majlis. Nyatakan semasa order.</div>
   </div>
   <div class="faq-item reveal">
     <div class="faq-q">Apakah kaedah pembayaran diterima?</div>
-    <div class="faq-a">Kami menerima DuitNow, Touch 'n Go eWallet, dan bank transfer. Deposit 50% diperlukan untuk sahkan order.</div>
+    <div class="faq-a">Kami menerima DuitNow, Touch n Go eWallet, dan bank transfer. Deposit 50% diperlukan untuk sahkan order.</div>
   </div>
   <div class="faq-item reveal">
     <div class="faq-q">Boleh buat order last minute?</div>
-    <div class="faq-a">Subject to availability! Hubungi kami melalui WhatsApp dan kami akan cuba bantu sebaik mungkin. Tapi amalannya, tempah 2-3 hari awal untuk elak kecewa.</div>
+    <div class="faq-a">Subject to availability! WhatsApp kami dan kami akan cuba bantu. Tapi amalannya, tempah 2–3 hari awal untuk elak kecewa.</div>
   </div>
 </div>
 
@@ -316,43 +334,44 @@ const PRODUCTS = [
 </footer>
 
 <script>
+// Apply hero photo if set
+const heroBanner = document.getElementById('heroBanner');
+const heroOverlay = document.getElementById('heroOverlay');
+if (HERO_PHOTO) {
+  heroBanner.style.backgroundImage = `url('${HERO_PHOTO}')`;
+  heroBanner.style.backgroundSize = 'cover';
+  heroBanner.style.backgroundPosition = 'center';
+  heroOverlay.style.display = 'block';
+  heroBanner.querySelector('.hero-banner-content').style.color = '#fff';
+} else {
+  heroBanner.classList.add('hero-banner-nophoto');
+}
+
 // Build product cards
 const grid = document.getElementById('productGrid');
-
 PRODUCTS.forEach((p, i) => {
   const card = document.createElement('div');
   card.className = 'product-card reveal';
   card.style.transitionDelay = (i * 0.08) + 's';
 
-  const imgContent = p.photo
-    ? `<img src="${p.photo}" alt="${p.name}" loading="lazy">`
-    : p.emoji;
-
-  const badgeHtml = p.badge
-    ? `<span class="product-badge ${p.badgeType}">${p.badge}</span>`
-    : '';
-
-  const variantsHtml = p.variants.map(v =>
-    `<div class="variant-row"><span class="variant-name">${v.size}</span><span class="variant-price">${v.price}</span></div>`
+  const imgContent = p.photo ? `<img src="${p.photo}" alt="${p.name}" loading="lazy">` : p.emoji;
+  const labelHtml = p.label ? `<span class="product-label ${p.labelType}">${p.label}</span>` : '';
+  const pricesHtml = p.variants.map(v =>
+    `<div class="price-row"><span class="price-size">${v.size}</span><span class="price-amt">${v.price}</span></div>`
   ).join('');
-
-  const tagsHtml = p.tags.map(t => `<span class="tag">${t}</span>`).join('');
-
   const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(p.message)}`;
 
   card.innerHTML = `
-    <div class="product-img">${imgContent}${badgeHtml}</div>
-    <div class="product-body">
+    <div class="product-img">${imgContent}${labelHtml}</div>
+    <div class="product-info">
       <div class="product-name">${p.name}</div>
       <div class="product-desc">${p.desc}</div>
-      <div class="product-tags">${tagsHtml}</div>
-      <div class="product-variants">${variantsHtml}</div>
-      <a href="${waLink}" target="_blank" class="order-btn whatsapp">
+      <div class="price-rows">${pricesHtml}</div>
+      <a href="${waLink}" target="_blank" class="wa-btn">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Order via WhatsApp
       </a>
     </div>`;
-
   grid.appendChild(card);
 });
 
