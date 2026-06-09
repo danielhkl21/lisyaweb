@@ -688,8 +688,8 @@ const RECIPES = [
 <nav>
   <a href="#" class="nav-logo">Lisya Fashihah</a>
   <ul class="nav-links">
-    <li><a href="#recipes" class="active">Recipes</a></li>
-    <li><a href="#about" class="active">About</a></li>
+    <li><a href="#recipes">Recipes</a></li>
+    <li><a href="#about">About</a></li>
     <li><a href="products.html">Shop</a></li>
   </ul>
   <a href="https://www.tiktok.com/@lisyafashihah" target="_blank" class="nav-tiktok">Follow on TikTok</a>
@@ -849,6 +849,31 @@ const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+// Scroll spy nav
+// Scroll spy nav
+const navSections = [
+  document.getElementById('recipes'),
+  document.getElementById('about')
+];
+const navLinks = document.querySelectorAll('.nav-links a');
+
+function updateActiveNav() {
+  let current = '';
+  navSections.forEach(sec => {
+    if (!sec) return;
+    const top = sec.getBoundingClientRect().top;
+    if (top <= 120) current = sec.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) {
+      a.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', updateActiveNav);
+updateActiveNav();
 </script>
 </body>
 </html>
