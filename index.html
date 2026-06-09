@@ -20,7 +20,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .nav-logo{font-family:var(--font-d);font-size:1.45rem;font-weight:500;font-style:italic;color:var(--deep);text-decoration:none;}
 .nav-links{display:flex;gap:1.4rem;list-style:none;}
 .nav-links a{font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
-.nav-links a:hover{color:var(--deep);}
+.nav-links a.active{color:var(--deep);border-bottom:2px solid var(--dusty);padding-bottom:2px;}
 .nav-tiktok{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--deep);background:var(--rose);border:1px solid var(--dusty);padding:0.5rem 1.2rem;text-decoration:none;border-radius:50px;transition:all 0.2s;}
 .nav-tiktok:hover{background:var(--dusty);color:#fff;}
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7rem 2rem 5rem;position:relative;z-index:1;}
@@ -497,7 +497,7 @@ const RECIPES = [
   },
   {
     name:        "Durian Belanda Laici 🍹",
-    category:    "drink",
+    category:    "drinks",
     emoji:       "🍹",
     photo:       "",
     badge:       "Drink",
@@ -516,7 +516,7 @@ const RECIPES = [
   },
   {
     name:        "Nenas Longan Selasih 🍍",
-    category:    "drink",
+    category:    "drinks",
     emoji:       "🍍",
     photo:       "",
     badge:       "Drink",
@@ -688,8 +688,8 @@ const RECIPES = [
 <nav>
   <a href="#" class="nav-logo">Lisya Fashihah</a>
   <ul class="nav-links">
-    <li><a href="#recipes">Recipes</a></li>
-    <li><a href="#about">About</a></li>
+    <li><a href="#recipes" class="active">Recipes</a></li>
+    <li><a href="#about" class="active">About</a></li>
     <li><a href="products.html">Shop</a></li>
   </ul>
   <a href="https://www.tiktok.com/@lisyafashihah" target="_blank" class="nav-tiktok">Follow on TikTok</a>
@@ -713,10 +713,10 @@ const RECIPES = [
   </div>
   <div class="category-filter reveal">
     <button class="filter-btn active" data-filter="all">All Recipes</button>
-    <button class="filter-btn" data-filter="cookies">Cookies & Biskut</button>
+    <button class="filter-btn" data-filter="cookies">Cookies</button>
     <button class="filter-btn" data-filter="chicken">Chicken</button>
-    <button class="filter-btn" data-filter="rice">Rice & Nasi</button>
-    <button class="filter-btn" data-filter="dessert">Desserts & Kuih</button>
+    <button class="filter-btn" data-filter="rice">Rice</button>
+    <button class="filter-btn" data-filter="dessert">Desserts</button>
     <button class="filter-btn" data-filter="drinks">Drinks</button>
     <button class="filter-btn" data-filter="snacks">Snacks</button>
   </div>
