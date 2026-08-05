@@ -78,9 +78,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .price-size{font-size:0.78rem;color:var(--text);}
 .price-amt{font-family:var(--font-d);font-size:0.95rem;color:var(--deep);font-weight:500;}
 
-.wa-btn{display:flex;align-items:center;justify-content:center;gap:0.5rem;width:100%;padding:0.8rem;background:#25D366;color:#fff;border-radius:10px;text-decoration:none;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;transition:background 0.2s;font-family:var(--font-b);}
-.wa-btn:hover{background:#1DA851;}
-.wa-btn svg{width:15px;height:15px;fill:#fff;flex-shrink:0;}
+.order-btn{display:flex;align-items:center;justify-content:center;gap:0.5rem;width:100%;padding:0.8rem;background:var(--deep);color:var(--cream);border:none;border-radius:10px;text-decoration:none;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;transition:background 0.2s;font-family:var(--font-b);cursor:pointer;}
+.order-btn:hover{background:var(--mauve);}
 
 /* STORY SECTION */
 .story{width:100%;background:var(--deep);display:grid;grid-template-columns:1fr 1fr;}
@@ -103,6 +102,49 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .how-num{font-family:var(--font-d);font-size:2.8rem;color:var(--rose);line-height:1;margin-bottom:0.75rem;}
 .how-title{font-size:0.88rem;font-weight:500;color:var(--deep);margin-bottom:0.5rem;}
 .how-desc{font-size:0.78rem;color:var(--muted);line-height:1.7;}
+
+/* ORDER FORM — Kaya Toast Cookie style, themed for Lisya */
+.order-wrap{background:var(--warm);padding:5rem 3.5rem;}
+.order-card{max-width:640px;margin:0 auto;background:var(--cream);border:1px solid var(--border);border-radius:20px;padding:2.5rem 2.2rem;box-shadow:0 20px 50px rgba(122,79,79,0.08);}
+.order-row{margin-bottom:1.3rem;display:flex;flex-direction:column;gap:0.45rem;}
+.order-row-split{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.3rem;}
+.order-row-split .order-row{margin-bottom:0;}
+.order-row label{font-size:0.78rem;letter-spacing:0.04em;color:var(--deep);font-weight:500;}
+.order-row input[type="text"],
+.order-row input[type="tel"],
+.order-row input[type="email"],
+.order-row input[type="date"],
+.order-row select,
+.order-row textarea{
+  width:100%;padding:0.75rem 0.9rem;border:1px solid var(--border);border-radius:10px;
+  background:#fff;color:var(--text);font-family:var(--font-b);font-size:0.88rem;font-weight:300;
+  outline:none;transition:border-color 0.2s;
+}
+.order-row input:focus,.order-row select:focus,.order-row textarea:focus{border-color:var(--dusty);}
+.order-row textarea{resize:vertical;min-height:70px;}
+.order-divider{height:1px;background:var(--border);margin:1.8rem 0;}
+
+.qty-control{display:flex;align-items:center;gap:0.9rem;}
+.qty-control button{width:38px;height:38px;border-radius:50%;border:1px solid var(--dusty);background:#fff;color:var(--deep);font-size:1.1rem;cursor:pointer;transition:all 0.2s;font-family:var(--font-b);}
+.qty-control button:hover{background:var(--rose);color:#fff;}
+.qty-control input{width:50px;text-align:center;border:none;background:transparent;font-family:var(--font-d);font-size:1.2rem;color:var(--deep);}
+
+.radio-group{display:flex;flex-direction:column;gap:0.6rem;}
+.radio-group label{display:flex;align-items:center;gap:0.55rem;font-size:0.85rem;font-weight:400;color:var(--text);cursor:pointer;}
+.radio-group input{accent-color:var(--dusty);width:16px;height:16px;}
+
+.order-price-preview{background:var(--warm);border:1px solid var(--border);border-radius:10px;padding:0.85rem 1rem;display:flex;justify-content:space-between;align-items:center;margin-bottom:1.3rem;}
+.order-price-preview .label{font-size:0.78rem;color:var(--muted);}
+.order-price-preview .amt{font-family:var(--font-d);font-size:1.25rem;color:var(--deep);font-weight:500;}
+
+.order-disclaimer{font-size:0.72rem;color:var(--muted);line-height:1.7;margin-bottom:1.3rem;}
+
+.order-submit-btn{width:100%;padding:1rem;background:var(--deep);color:var(--cream);border:none;border-radius:50px;font-size:0.82rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;font-family:var(--font-b);}
+.order-submit-btn:hover{background:var(--mauve);}
+
+.field-error{color:#B0453D;font-size:0.72rem;display:none;}
+.order-row.invalid input,.order-row.invalid select,.order-row.invalid textarea{border-color:#B0453D;}
+.order-row.invalid .field-error{display:block;}
 
 /* FAQ */
 .faq{padding:5rem 3.5rem;max-width:800px;margin:0 auto;}
@@ -135,6 +177,9 @@ footer{background:var(--deep);color:rgba(253,248,245,0.8);padding:3rem 3.5rem;te
   nav{padding:1rem 1.5rem;}.nav-links{display:none;}
   .sec{padding:3.5rem 1.5rem;}
   .how{padding:3.5rem 1.5rem;}
+  .order-wrap{padding:3.5rem 1.5rem;}
+  .order-card{padding:2rem 1.4rem;}
+  .order-row-split{grid-template-columns:1fr;gap:1.3rem;}
   .faq{padding:3rem 1.5rem;}
   footer{padding:2.5rem 1.5rem;}.footer-links{flex-wrap:wrap;gap:1rem;}
   .hero-banner{height:80vh;}
@@ -274,20 +319,130 @@ const PRODUCTS = [
       <div class="how-card reveal">
         <div class="how-num">01</div>
         <div class="how-title">Pilih Produk</div>
-        <div class="how-desc">Scroll ke atas, pilih kek batik kegemaran anda dan saiz yang sesuai.</div>
+        <div class="how-desc">Tekan "Tempah" pada kek batik kegemaran anda dan saiz yang sesuai.</div>
       </div>
       <div class="how-card reveal" style="transition-delay:0.1s">
         <div class="how-num">02</div>
-        <div class="how-title">Klik WhatsApp</div>
-        <div class="how-desc">Tekan butang hijau — mesej automatik akan dihantar terus kepada kami.</div>
+        <div class="how-title">Isi Borang</div>
+        <div class="how-desc">Lengkapkan borang tempahan dengan butiran penghantaran anda.</div>
       </div>
       <div class="how-card reveal" style="transition-delay:0.2s">
         <div class="how-num">03</div>
-        <div class="how-title">Bayar & Tunggu</div>
-        <div class="how-desc">Bayar deposit 50%, dan kek anda siap dalam 2–3 hari bekerja!</div>
+        <div class="how-title">Hantar & Bayar</div>
+        <div class="how-desc">Mesej WhatsApp automatik dihantar terus kepada kami. Bayar deposit 50% untuk sahkan tempahan!</div>
       </div>
     </div>
   </div>
+</div>
+
+<!-- ORDER FORM -->
+<div class="order-wrap" id="order">
+  <div class="sec-head reveal">
+    <span class="sec-eye">✦ Tempahan</span>
+    <h2 class="sec-title">Borang Tempahan</h2>
+    <div class="divider"><div class="divider-line"></div><span style="color:var(--dusty)">❀</span><div class="divider-line"></div></div>
+  </div>
+
+  <form class="order-card reveal" id="orderForm" novalidate>
+
+    <div class="order-row" id="row-product">
+      <label>Produk *</label>
+      <select id="ofProduct"></select>
+    </div>
+
+    <div class="order-row" id="row-variant">
+      <label>Saiz *</label>
+      <select id="ofVariant"></select>
+    </div>
+
+    <div class="order-row">
+      <label>Kuantiti</label>
+      <div class="qty-control">
+        <button type="button" id="qtyMinus">−</button>
+        <input type="text" id="ofQty" value="1" readonly>
+        <button type="button" id="qtyPlus">+</button>
+      </div>
+    </div>
+
+    <div class="order-price-preview">
+      <span class="label">Anggaran Harga</span>
+      <span class="amt" id="ofPricePreview">RM 18</span>
+    </div>
+
+    <div class="order-row" id="row-date">
+      <label>Tarikh Penghantaran / Ambil *</label>
+      <input type="date" id="ofDate">
+      <span class="field-error">Sila pilih tarikh (minimum 2 hari dari sekarang).</span>
+    </div>
+
+    <div class="order-divider"></div>
+
+    <div class="order-row" id="row-name">
+      <label>Nama Anda *</label>
+      <input type="text" id="ofName" placeholder="Nama penuh anda">
+      <span class="field-error">Sila masukkan nama anda.</span>
+    </div>
+
+    <div class="order-row" id="row-phone">
+      <label>No. WhatsApp Anda *</label>
+      <input type="tel" id="ofPhone" placeholder="cth: 0123456789">
+      <span class="field-error">Sila masukkan no. WhatsApp yang sah.</span>
+    </div>
+
+    <div class="order-row">
+      <label>Tempahan Untuk *</label>
+      <div class="radio-group">
+        <label><input type="radio" name="ofFor" value="self" checked> Untuk Saya Sendiri</label>
+        <label><input type="radio" name="ofFor" value="gift"> 🎁 Hadiah Untuk Orang Lain</label>
+      </div>
+    </div>
+
+    <div class="order-row" id="row-gift" style="display:none">
+      <label>Nama & No. WhatsApp Penerima *</label>
+      <input type="text" id="ofGiftInfo" placeholder="cth: Aina, 0198765432">
+      <span class="field-error">Sila masukkan nama & no. WhatsApp penerima.</span>
+    </div>
+
+    <div class="order-divider"></div>
+
+    <div class="order-row" id="row-address">
+      <label>Alamat Penghantaran *</label>
+      <textarea id="ofAddress" placeholder="Alamat penuh untuk penghantaran"></textarea>
+      <span class="field-error">Sila masukkan alamat penghantaran.</span>
+    </div>
+
+    <div class="order-row-split">
+      <div class="order-row" id="row-postcode">
+        <label>Poskod *</label>
+        <input type="text" id="ofPostcode" placeholder="cth: 43000">
+        <span class="field-error">Sila masukkan poskod yang sah.</span>
+      </div>
+      <div class="order-row" id="row-city">
+        <label>Bandar *</label>
+        <input type="text" id="ofCity" placeholder="cth: Kajang">
+        <span class="field-error">Sila masukkan bandar anda.</span>
+      </div>
+    </div>
+
+    <div class="order-row" id="row-state">
+      <label>Negeri *</label>
+      <select id="ofState">
+        <option value="">Pilih negeri…</option>
+        <option>Kuala Lumpur</option>
+        <option>Selangor</option>
+      </select>
+      <span class="field-error">Sila pilih negeri anda.</span>
+    </div>
+
+    <div class="order-row">
+      <label>Nota Tambahan (pilihan)</label>
+      <textarea id="ofNotes" placeholder="cth: tulis nama, hiasan khas, dsb"></textarea>
+    </div>
+
+    <p class="order-disclaimer">Menekan <strong>Hantar Tempahan</strong> akan membuka WhatsApp dengan butiran tempahan anda, dihantar terus kepada kami. Tiada bayaran diambil di sini — deposit 50% akan diminta melalui WhatsApp untuk sahkan tempahan.</p>
+
+    <button type="submit" class="order-submit-btn">Hantar Tempahan</button>
+  </form>
 </div>
 
 <!-- FAQ -->
@@ -307,7 +462,7 @@ const PRODUCTS = [
   </div>
   <div class="faq-item reveal">
     <div class="faq-q">Boleh custom order / tulis nama?</div>
-    <div class="faq-a">Boleh! Kami boleh buat custom topping, tulis nama, atau tambah hiasan khas untuk majlis. Nyatakan semasa order.</div>
+    <div class="faq-a">Boleh! Kami boleh buat custom topping, tulis nama, atau tambah hiasan khas untuk majlis. Nyatakan dalam borang tempahan.</div>
   </div>
   <div class="faq-item reveal">
     <div class="faq-q">Apakah kaedah pembayaran diterima?</div>
@@ -315,7 +470,7 @@ const PRODUCTS = [
   </div>
   <div class="faq-item reveal">
     <div class="faq-q">Boleh buat order last minute?</div>
-    <div class="faq-a">Subject to availability! WhatsApp kami dan kami akan cuba bantu. Tapi amalannya, tempah 2–3 hari awal untuk elak kecewa.</div>
+    <div class="faq-a">Subject to availability! Hantar borang dan kami akan cuba bantu. Tapi amalannya, tempah 2–3 hari awal untuk elak kecewa.</div>
   </div>
 </div>
 
@@ -359,7 +514,6 @@ PRODUCTS.forEach((p, i) => {
   const pricesHtml = p.variants.map(v =>
     `<div class="price-row"><span class="price-size">${v.size}</span><span class="price-amt">${v.price}</span></div>`
   ).join('');
-  const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(p.message)}`;
 
   card.innerHTML = `
     <div class="product-img">${imgContent}${labelHtml}</div>
@@ -367,12 +521,159 @@ PRODUCTS.forEach((p, i) => {
       <div class="product-name">${p.name}</div>
       <div class="product-desc">${p.desc}</div>
       <div class="price-rows">${pricesHtml}</div>
-      <a href="${waLink}" target="_blank" class="wa-btn">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Order via WhatsApp
-      </a>
+      <button type="button" class="order-btn" data-product-index="${i}">Tempah Sekarang</button>
     </div>`;
   grid.appendChild(card);
+});
+
+// ---- ORDER FORM LOGIC ----
+const ofProduct = document.getElementById('ofProduct');
+const ofVariant = document.getElementById('ofVariant');
+const ofQty = document.getElementById('ofQty');
+const ofPricePreview = document.getElementById('ofPricePreview');
+const ofDate = document.getElementById('ofDate');
+
+// populate product dropdown
+PRODUCTS.forEach((p, i) => {
+  const opt = document.createElement('option');
+  opt.value = i;
+  opt.textContent = p.name;
+  ofProduct.appendChild(opt);
+});
+
+function parsePrice(str) {
+  const n = parseFloat(str.replace(/[^\d.]/g, ''));
+  return isNaN(n) ? 0 : n;
+}
+
+function updateVariants() {
+  const p = PRODUCTS[ofProduct.value];
+  ofVariant.innerHTML = '';
+  p.variants.forEach((v, i) => {
+    const opt = document.createElement('option');
+    opt.value = i;
+    opt.textContent = `${v.size} — ${v.price}`;
+    ofVariant.appendChild(opt);
+  });
+  updatePricePreview();
+}
+
+function updatePricePreview() {
+  const p = PRODUCTS[ofProduct.value];
+  const v = p.variants[ofVariant.value];
+  const qty = parseInt(ofQty.value, 10) || 1;
+  const total = parsePrice(v.price) * qty;
+  ofPricePreview.textContent = 'RM ' + total.toFixed(0);
+}
+
+ofProduct.addEventListener('change', updateVariants);
+ofVariant.addEventListener('change', updatePricePreview);
+updateVariants();
+
+document.getElementById('qtyMinus').addEventListener('click', () => {
+  const cur = parseInt(ofQty.value, 10) || 1;
+  if (cur > 1) ofQty.value = cur - 1;
+  updatePricePreview();
+});
+document.getElementById('qtyPlus').addEventListener('click', () => {
+  const cur = parseInt(ofQty.value, 10) || 1;
+  ofQty.value = cur + 1;
+  updatePricePreview();
+});
+
+// min delivery date = today + 2 days
+const minDate = new Date();
+minDate.setDate(minDate.getDate() + 2);
+ofDate.min = minDate.toISOString().split('T')[0];
+
+// gift toggle
+const giftRow = document.getElementById('row-gift');
+document.querySelectorAll('input[name="ofFor"]').forEach(r => {
+  r.addEventListener('change', () => {
+    giftRow.style.display = document.querySelector('input[name="ofFor"]:checked').value === 'gift' ? 'flex' : 'none';
+  });
+});
+
+// "Tempah Sekarang" buttons — pre-select product/variant and scroll to form
+grid.addEventListener('click', (e) => {
+  const btn = e.target.closest('.order-btn');
+  if (!btn) return;
+  const idx = btn.getAttribute('data-product-index');
+  ofProduct.value = idx;
+  updateVariants();
+  document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+});
+
+// form validation + submit
+const orderForm = document.getElementById('orderForm');
+const requiredRows = [
+  { row: 'row-date', field: ofDate, check: () => !!ofDate.value },
+  { row: 'row-name', field: document.getElementById('ofName'), check: (el) => el.value.trim().length > 0 },
+  { row: 'row-phone', field: document.getElementById('ofPhone'), check: (el) => el.value.trim().length >= 8 },
+  { row: 'row-address', field: document.getElementById('ofAddress'), check: (el) => el.value.trim().length > 0 },
+  { row: 'row-postcode', field: document.getElementById('ofPostcode'), check: (el) => el.value.trim().length >= 4 },
+  { row: 'row-city', field: document.getElementById('ofCity'), check: (el) => el.value.trim().length > 0 },
+  { row: 'row-state', field: document.getElementById('ofState'), check: (el) => el.value.trim().length > 0 }
+];
+
+orderForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  let valid = true;
+
+  requiredRows.forEach(({ row, field, check }) => {
+    const rowEl = document.getElementById(row);
+    const ok = typeof field.check === 'function' ? field.check() : check(field);
+    rowEl.classList.toggle('invalid', !ok);
+    if (!ok) valid = false;
+  });
+
+  const isGift = document.querySelector('input[name="ofFor"]:checked').value === 'gift';
+  const giftInfoEl = document.getElementById('ofGiftInfo');
+  if (isGift) {
+    const ok = giftInfoEl.value.trim().length > 0;
+    giftRow.classList.toggle('invalid', !ok);
+    if (!ok) valid = false;
+  } else {
+    giftRow.classList.remove('invalid');
+  }
+
+  if (!valid) {
+    document.querySelector('.order-row.invalid, #row-gift.invalid')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
+  const p = PRODUCTS[ofProduct.value];
+  const v = p.variants[ofVariant.value];
+  const qty = parseInt(ofQty.value, 10) || 1;
+  const name = document.getElementById('ofName').value.trim();
+  const phone = document.getElementById('ofPhone').value.trim();
+  const address = document.getElementById('ofAddress').value.trim();
+  const postcode = document.getElementById('ofPostcode').value.trim();
+  const city = document.getElementById('ofCity').value.trim();
+  const state = document.getElementById('ofState').value;
+  const notes = document.getElementById('ofNotes').value.trim();
+  const date = ofDate.value;
+
+  let msg = `Hi Lisya! Saya nak buat tempahan:\n\n`;
+  msg += `Produk: ${p.name}\n`;
+  msg += `Saiz: ${v.size} (${v.price})\n`;
+  msg += `Kuantiti: ${qty}\n`;
+  msg += `Tarikh Penghantaran/Ambil: ${date}\n\n`;
+  msg += `Nama: ${name}\n`;
+  msg += `No. WhatsApp: ${phone}\n`;
+  if (isGift) {
+    msg += `Hadiah untuk: ${giftInfoEl.value.trim()}\n`;
+  } else {
+    msg += `Untuk: Diri sendiri\n`;
+  }
+  msg += `\nAlamat: ${address}\n`;
+  msg += `Poskod: ${postcode}\n`;
+  msg += `Bandar: ${city}\n`;
+  msg += `Negeri: ${state}\n`;
+  if (notes) msg += `\nNota: ${notes}\n`;
+
+  const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+  window.open(waLink, '_blank');
 });
 
 // FAQ accordion
